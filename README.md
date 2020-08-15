@@ -1,5 +1,16 @@
-# 🚨🚨🚨 Credit-Card-Fraud-Detection 🚨🚨🚨
+# 🚨🚨🚨 Credit-Card-Fraud-Detection 🚨🚨🚨  <!-- omit in toc -->
 Many banks use Machine Learning to detect frauds in credit card transactions, but how does it work? Let's have a look at it 🧐
+
+# Table of Contents  <!-- omit in toc -->
+
+- [Synopsis 📝](#synopsis-)
+- [What is Fraud Detection ⁉](#what-is-fraud-detection-)
+- [Fraud detection techniques ✅](#fraud-detection-techniques-)
+- [Challenges faced during fraud detection 💫](#challenges-faced-during-fraud-detection-)
+- [Dataset 📈](#dataset-)
+  - [Summary of the Dataset 📃](#summary-of-the-dataset-)
+  - [Common mistakes while using Imbalanced Dataset 🚫](#common-mistakes-while-using-imbalanced-dataset-)
+- [References 🔍](#references-)
 
 # Synopsis 📝
 
