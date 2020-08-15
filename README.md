@@ -1,7 +1,7 @@
 # 🚨🚨🚨 Credit-Card-Fraud-Detection 🚨🚨🚨  <!-- omit in toc -->
 Many banks use Machine Learning to detect frauds in credit card transactions, but how does it work? Let's have a look at it 🧐
 
-# Table of Contents  <!-- omit in toc -->
+# Table of Contents 📒 <!-- omit in toc -->
 
 - [Synopsis 📝](#synopsis-)
 - [What is Fraud Detection ⁉](#what-is-fraud-detection-)
