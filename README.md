@@ -45,6 +45,19 @@ This dataset presents transactions that occurred in two days, where we have 492 
 
 It contains only numerical input variables which are the result of a PCA transformation. Features V1, V2, … V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-senstive learning. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
 
+## Summary of the Dataset 📃
+
+ - Transaction amounts are relatively small, averaging at **USD 88.349619**.
+ - No `Null` values.
+ - **99.83%** of transactions were **non-fraud** and **0.17%** of transactions were fraud, making the data Imbalanced.
+ - The description of the data says all the features, except time and amount went through **PCA Transformation** (Dimensionality Reduction technique). Keeping in mind that in order to implement PCA Transformation, features are needed to be scaled so I will be assuming all the ***V*** features have been scaled.
+
+## Common mistakes while using Imbalanced Dataset 🚫
+
+- Testing on oversampled/undersampled dataset.
+- Implementing cross validation after oversampling/undersampling the training data. It needs to be **during** the fact.
+- Using accuracy score as metric. Use f1-score, precision, recall and confusion matrix instead.
+
 # References 🔍
 
 1. [fraud detection, definition](https://searchsecurity.techtarget.com/definition/fraud-detection)
