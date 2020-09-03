@@ -1,4 +1,4 @@
-# 🚨🚨🚨 Credit-Card-Fraud-Detection 🚨🚨🚨  <!-- omit in toc -->
+# 🚨🚨🚨 Finding Anamolies in Transactional Data 🚨🚨🚨  <!-- omit in toc -->
 Many banks use Machine Learning to detect fraud in credit card transactions, but how does it work? Let's have a look at it 🧐
 
 # Table of Contents 📒 <!-- omit in toc -->
