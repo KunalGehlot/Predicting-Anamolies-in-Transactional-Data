@@ -7,14 +7,21 @@ Many banks use Machine Learning to predict fraud in credit card transactions, bu
 - [What is Fraud Detection ⁉](#what-is-fraud-detection-)
 - [Fraud detection techniques ✅](#fraud-detection-techniques-)
 - [Challenges faced during fraud detection 💫](#challenges-faced-during-fraud-detection-)
-- [Dataset 📊](#dataset-)
+- [Dataset 💾](#dataset-)
   - [Summary of the Dataset 📃](#summary-of-the-dataset-)
   - [Common mistakes while using Imbalanced Dataset 🚫](#common-mistakes-while-using-imbalanced-dataset-)
   - [Scaling the Dataset 🔬](#scaling-the-dataset-)
-    - [Why and Where to Apply Feature Scaling ?](#why-and-where-to-apply-feature-scaling-)
+    - [Why and Where to Apply Feature Scaling❔](#why-and-where-to-apply-feature-scaling)
+  - [Sub-Sampling the DataSet ➗](#sub-sampling-the-dataset-)
+    - [Why do we need to create a Sub-Sample❔](#why-do-we-need-to-create-a-sub-sample)
+      - [Down-Sampling 📉](#down-sampling-)
+    - [Splitting the Dataset ➖](#splitting-the-dataset-)
   - [Charts and Figures 📈](#charts-and-figures-)
     - [Distribution Plot of Amount and Time 💲⏳](#distribution-plot-of-amount-and-time-)
-    - [Distribution Plot of each feature 📉](#distribution-plot-of-each-feature-)
+    - [Distribution Plot of each feature 🧮](#distribution-plot-of-each-feature-)
+    - [Balancing of the DataSet 📊](#balancing-of-the-dataset-)
+      - [Imbalanced Data (Original)](#imbalanced-data-original)
+      - [Balanced Data (After Sub-Sampling)](#balanced-data-after-sub-sampling)
 - [References 🔍](#references-)
 
 # Synopsis 📝
@@ -54,7 +61,7 @@ We will be focusing using Machine Learning to detect fraud.
  - Misclassified data as not every fraudulent transaction are being reported and caught.
  - Adaptive techniques used against the model by the scammers.
 
-# Dataset 📊
+# Dataset 💾
 
 The datasets contains transactions made by credit cards in September 2013 by European cardholders.
 This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions
@@ -78,11 +85,32 @@ It contains only numerical input variables which are the result of a PCA transfo
 
 Feature scaling, also known as Standardization is a step of Data Pre Processing which is applied to independent variables or features of data. It helps to normalize the data within a particular range. Sometimes, it also helps in speeding up the calculations in an algorithm.
 
-Standardisation replaces the values by their Z scores.
+### Why and Where to Apply Feature Scaling❔
 
-![Scaler formula](img/standard.png)
+The real-world dataset contains features that highly vary in magnitudes, units, and range. Normalization should be performed when the scale of a feature is irrelevant or misleading and not should Normalise when the scale is meaningful.
 
-### Why and Where to Apply Feature Scaling ?
+We need to scale the columns `Time` and `Amount`.
+
+## Sub-Sampling the DataSet ➗
+
+In classification problems, a disparity in the frequencies of the observed classes can have a significant negative impact on model fitting. One technique for resolving such a class imbalance is to subsample the training data in a manner that mitigates the issues.
+
+According to our use-case scenario, subsampling is a process to make the ratio of Positive and Negative features to 50-50 so that we have equivalent Fraudulent and Non-Fraudulent Transactions.
+
+### Why do we need to create a Sub-Sample❔
+
+As we can see in the charts below, the original data is heavily imbalanced. It can cause two major problems: 
+
+- *Overfitting:* Our model will assume that there are no frauds and will be uncertain.
+- *Wrong Correlations:* Although we don't know what `V` stands for, it will be useful to understand how each of these features would influence the results.
+
+#### Down-Sampling 📉
+
+Making a Random subset of the apparent multitude of classes in the training set so their class frequencies coordinate the least common class. For instance, assume that 80% of the preparation set examples are the top of the line and the staying 20% are in the second class. Down-Sampling would randomly sample the first class to be a similar size as the second class (with the goal that only 40% of the complete preparing set is utilized to fit the model).
+
+### Splitting the Dataset ➖
+
+Before undersampling the Dataset, we have to separate the original dataset as we need to test the model on the real test dataset and not our modified dataset to check its real-world performance.
 
 ## Charts and Figures 📈
 
@@ -92,14 +120,24 @@ Will tell us about the Skewness of the data and where does the data incline towa
 
 ![Distribution Chart](img/distribution.svg)
 
-### Distribution Plot of each feature 📉
+### Distribution Plot of each feature 🧮
 Plotting histograms with their distribution of each feature (Time + V1-V27) to see the difference between Fraudulent and Non-Fraudulent transactions.
 
 ![Histograms](img/hist.svg)
 
+### Balancing of the DataSet 📊
+
+#### Imbalanced Data (Original)
+
+![Imabalnced Data](img/imbalanced.svg)
+
+#### Balanced Data (After Sub-Sampling)
+
+![Balanced Data](img/balanced.svg)
+
 # References 🔍
 
-1. [fraud detection, definition](https://searchsecurity.techtarget.com/definition/fraud-detection)
+1. [Fraud Detection, definition](https://searchsecurity.techtarget.com/definition/fraud-detection)
 2. [AI-Based Fraud Detection in Banking – Current Applications and Trends](https://emerj.com/ai-sector-overviews/artificial-intelligence-fraud-banking/#:~:text=Banks%20can%20use%20predictive%20analytics,involve%20a%20separate%20processing%20service.)
 3. [Credit Card Fraud Detection in Python using Scikit Learn](https://medium.com/analytics-vidhya/credit-card-fraud-detection-in-python-using-scikit-learn-f9046a030f50)
 4. [Fraud Detection in the Banking Industry and the Significance of Machine Learning](https://medium.com/engineered-publicis-sapient/fraud-detection-in-banking-industry-and-significance-of-machine-learning-dfd31891a0b4)
@@ -107,3 +145,4 @@ Plotting histograms with their distribution of each feature (Time + V1-V27) to s
 6. [Credit Card Fraud Detection Dataset: Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud/data#)
 7. [Kaggle: Dealing with imbalanced datasets](https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets)
 8. [Python | How and where to apply Feature Scaling?](https://www.geeksforgeeks.org/python-how-and-where-to-apply-feature-scaling/)
+9. [Subsampling For Class Imbalances](https://topepo.github.io/caret/subsampling-for-class-imbalances.html)
