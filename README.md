@@ -22,6 +22,9 @@ Many banks use Machine Learning to predict fraud in credit card transactions, bu
     - [Balancing of the DataSet 📊](#balancing-of-the-dataset-)
       - [Imbalanced Data (Original)](#imbalanced-data-original)
       - [Balanced Data (After Sub-Sampling)](#balanced-data-after-sub-sampling)
+    - [Correlation Matrices 🟦⬜🟥](#correlation-matrices-)
+      - [Correlation (Original Dataset)](#correlation-original-dataset)
+      - [Correlation (New Sampled DataSet)](#correlation-new-sampled-dataset)
 - [References 🔍](#references-)
 
 # Synopsis 📝
@@ -135,6 +138,18 @@ Plotting histograms with their distribution of each feature (Time + V1-V27) to s
 
 ![Balanced Data](img/balanced.svg)
 
+### Correlation Matrices 🟦⬜🟥
+
+A correlation matrix is a table showing correlation coefficients between variables. Each cell in the table shows the correlation between the two variables. A correlation matrix is used to summarize data, as an input into a more advanced analysis, and as a diagnostic for advanced analyses.
+
+#### Correlation (Original Dataset)
+
+![old correlation](img/correlation.svg)
+
+#### Correlation (New Sampled DataSet)
+
+![new correlation](img/new%20correlation.svg)
+
 # References 🔍
 
 1. [Fraud Detection, definition](https://searchsecurity.techtarget.com/definition/fraud-detection)
@@ -146,3 +161,4 @@ Plotting histograms with their distribution of each feature (Time + V1-V27) to s
 7. [Kaggle: Dealing with imbalanced datasets](https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets)
 8. [Python | How and where to apply Feature Scaling?](https://www.geeksforgeeks.org/python-how-and-where-to-apply-feature-scaling/)
 9. [Subsampling For Class Imbalances](https://topepo.github.io/caret/subsampling-for-class-imbalances.html)
+10. [What is a Correlation Matrix?](https://www.displayr.com/what-is-a-correlation-matrix/#:~:text=A%20correlation%20matrix%20is%20a,a%20diagnostic%20for%20advanced%20analyses.)
