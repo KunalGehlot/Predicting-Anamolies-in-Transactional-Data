@@ -10,9 +10,11 @@ Many banks use Machine Learning to predict fraud in credit card transactions, bu
 - [Dataset 📊](#dataset-)
   - [Summary of the Dataset 📃](#summary-of-the-dataset-)
   - [Common mistakes while using Imbalanced Dataset 🚫](#common-mistakes-while-using-imbalanced-dataset-)
+  - [Scaling the Dataset 🔬](#scaling-the-dataset-)
+    - [Why and Where to Apply Feature Scaling ?](#why-and-where-to-apply-feature-scaling-)
   - [Charts and Figures 📈](#charts-and-figures-)
-    - [Distribution Plot of Amount and Time](#distribution-plot-of-amount-and-time)
-    - [Distribution Plot of each feature](#distribution-plot-of-each-feature)
+    - [Distribution Plot of Amount and Time 💲⏳](#distribution-plot-of-amount-and-time-)
+    - [Distribution Plot of each feature 📉](#distribution-plot-of-each-feature-)
 - [References 🔍](#references-)
 
 # Synopsis 📝
@@ -72,15 +74,25 @@ It contains only numerical input variables which are the result of a PCA transfo
 - Implementing cross-validation after oversampling/undersampling the training data. It needs to be **during** the fact.
 - Using accuracy score as the metric. Use f1-score, precision, recall and confusion matrix instead.
 
+## Scaling the Dataset 🔬
+
+Feature scaling, also known as Standardization is a step of Data Pre Processing which is applied to independent variables or features of data. It helps to normalize the data within a particular range. Sometimes, it also helps in speeding up the calculations in an algorithm.
+
+Standardisation replaces the values by their Z scores.
+
+![Scaler formula](img/standard.png)
+
+### Why and Where to Apply Feature Scaling ?
+
 ## Charts and Figures 📈
 
-### Distribution Plot of Amount and Time
+### Distribution Plot of Amount and Time 💲⏳
 
 Will tell us about the Skewness of the data and where does the data incline towards?
 
 ![Distribution Chart](img/distribution.svg)
 
-### Distribution Plot of each feature
+### Distribution Plot of each feature 📉
 Plotting histograms with their distribution of each feature (Time + V1-V27) to see the difference between Fraudulent and Non-Fraudulent transactions.
 
 ![Histograms](img/hist.svg)
@@ -94,3 +106,4 @@ Plotting histograms with their distribution of each feature (Time + V1-V27) to s
 5. [ML | Credit Card Fraud Detection](https://www.geeksforgeeks.org/ml-credit-card-fraud-detection/)
 6. [Credit Card Fraud Detection Dataset: Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud/data#)
 7. [Kaggle: Dealing with imbalanced datasets](https://www.kaggle.com/janiobachmann/credit-fraud-dealing-with-imbalanced-datasets)
+8. [Python | How and where to apply Feature Scaling?](https://www.geeksforgeeks.org/python-how-and-where-to-apply-feature-scaling/)
