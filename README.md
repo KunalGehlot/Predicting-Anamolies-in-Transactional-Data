@@ -25,6 +25,9 @@ Many banks use Machine Learning to predict fraud in credit card transactions, bu
     - [Correlation Matrices 🟦⬜🟥](#correlation-matrices-)
       - [Correlation (Original Dataset)](#correlation-original-dataset)
       - [Correlation (New Sampled DataSet)](#correlation-new-sampled-dataset)
+    - [BoxPlots 🔳](#boxplots-)
+      - [Negative Correlation](#negative-correlation)
+      - [Positive Correlation](#positive-correlation)
 - [References 🔍](#references-)
 
 # Synopsis 📝
@@ -150,6 +153,23 @@ A correlation matrix is a table showing correlation coefficients between variabl
 
 ![new correlation](img/new%20correlation.svg)
 
+So we can see that: 
+
+- V17, V14, V12 and V10 are negatively correlated, the lower they are, the higher are the chances for that transaction to be a fraud.
+- V2, V4, V11, V19 are positively related, the higher they are, the higher are the chances for that transaction to be a fraud.
+
+### BoxPlots 🔳
+
+A boxplot is a standardized way of displaying the distribution of data based on a five-number summary (“minimum”, first quartile (Q1), median, third quartile (Q3), and “maximum”). It can tell you about your outliers and what their values are. It can also tell you if your data is symmetrical, how tightly your data is grouped, and if and how your data is skewed.
+
+#### Negative Correlation
+
+![Negative Correlation Boxplots](img/boxplot1.svg)
+
+#### Positive Correlation
+
+![Positive Correlation Boxplots](img/boxplot2.svg)
+
 # References 🔍
 
 1. [Fraud Detection, definition](https://searchsecurity.techtarget.com/definition/fraud-detection)
@@ -162,3 +182,4 @@ A correlation matrix is a table showing correlation coefficients between variabl
 8. [Python | How and where to apply Feature Scaling?](https://www.geeksforgeeks.org/python-how-and-where-to-apply-feature-scaling/)
 9. [Subsampling For Class Imbalances](https://topepo.github.io/caret/subsampling-for-class-imbalances.html)
 10. [What is a Correlation Matrix?](https://www.displayr.com/what-is-a-correlation-matrix/#:~:text=A%20correlation%20matrix%20is%20a,a%20diagnostic%20for%20advanced%20analyses.)
+11. [Understanding Boxplots](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
