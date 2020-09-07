@@ -183,3 +183,4 @@ A boxplot is a standardized way of displaying the distribution of data based on 
 9. [Subsampling For Class Imbalances](https://topepo.github.io/caret/subsampling-for-class-imbalances.html)
 10. [What is a Correlation Matrix?](https://www.displayr.com/what-is-a-correlation-matrix/#:~:text=A%20correlation%20matrix%20is%20a,a%20diagnostic%20for%20advanced%20analyses.)
 11. [Understanding Boxplots](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
+12. [How to Remove Outliers for Machine Learning](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
