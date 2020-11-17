@@ -118,6 +118,19 @@ Making a Random subset of the apparent multitude of classes in the training set 
 
 Before undersampling the Dataset, we have to separate the original dataset as we need to test the model on the real test dataset and not our modified dataset to check its real-world performance.
 
+## Random Under-Sampling the DataSet ✂
+
+As we can see in [this](#imbalanced-data-original) figure, there is a huge imbalance between fraudulent and non-fraudulent transactions (99.83% and 0.17%). 
+
+Random undersampling involves randomly selecting examples from the majority class and deleting them from the training dataset.
+
+To achieve this, 
+
+- We first notice that there are 492 Fraudulent transactions and we need to bring the Non-Fradulent transaction to the same amount to make the 50-50 ratio we need.
+- Now we would shuffle the data to make sure that the data is equally distributed and not skewed towards one side due to the sub-sample we choose.
+
+*Note: *
+
 ## Charts and Figures 📈
 
 ### Distribution Plot of Amount and Time 💲⏳
@@ -135,7 +148,7 @@ Plotting histograms with their distribution of each feature (Time + V1-V27) to s
 
 #### Imbalanced Data (Original)
 
-![Imabalnced Data](img/imbalanced.svg)
+![Imbalanced Data](img/imbalanced.svg)
 
 #### Balanced Data (After Sub-Sampling)
 
@@ -170,6 +183,10 @@ A boxplot is a standardized way of displaying the distribution of data based on 
 
 ![Positive Correlation Boxplots](img/boxplot2.svg)
 
+### Distribution plot of V14, V12, V10 (Fraud Transactions) 🗻
+
+![Distribution of fraud transactions in V14, V12 and V10](img/distrubution2.svg)
+
 # References 🔍
 
 1. [Fraud Detection, definition](https://searchsecurity.techtarget.com/definition/fraud-detection)
@@ -184,3 +201,4 @@ A boxplot is a standardized way of displaying the distribution of data based on 
 10. [What is a Correlation Matrix?](https://www.displayr.com/what-is-a-correlation-matrix/#:~:text=A%20correlation%20matrix%20is%20a,a%20diagnostic%20for%20advanced%20analyses.)
 11. [Understanding Boxplots](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
 12. [How to Remove Outliers for Machine Learning](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
+13. [Random Oversampling and Undersampling for Imbalanced Classification](https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/#:~:text=Random%20undersampling%20involves%20randomly%20selecting,more%20balanced%20distribution%20is%20reached.)
