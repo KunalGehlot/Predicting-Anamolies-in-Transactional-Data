@@ -129,7 +129,7 @@ To achieve this,
 - We first notice that there are 492 Fraudulent transactions and we need to bring the Non-Fradulent transaction to the same amount to make the 50-50 ratio we need.
 - Now we would shuffle the data to make sure that the data is equally distributed and not skewed towards one side due to the sub-sample we choose.
 
-*Note: *
+*Note: Due to reducing the number of Non-fradulent transactions from 284,315 to 492*
 
 ## Charts and Figures 📈
 
