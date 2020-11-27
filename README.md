@@ -17,8 +17,10 @@ Many banks use Machine Learning to predict fraud in credit card transactions, bu
       - [Down-Sampling 📉](#down-sampling-📉)
     - [Splitting the Dataset ➖](#splitting-the-dataset-➖)
   - [Random Under-Sampling the DataSet ✂](#random-under-sampling-the-dataset-✂)
-    - [Distributing Equally](#distributing-equally)
-  - [Correlating](#correlating)
+    - [Distributing Equally 〰](#distributing-equally-〰)
+  - [Correlating ➰](#correlating-➰)
+    - [Boxplots 🔳](#boxplots-🔳)
+  - [Anamoly Detection 👻](#anamoly-detection-👻)
   - [Charts and Figures 📈](#charts-and-figures-📈)
     - [Distribution Plot of Amount and Time 💲⏳](#distribution-plot-of-amount-and-time-💲⏳)
     - [Distribution Plot of each feature 🧮](#distribution-plot-of-each-feature-🧮)
@@ -130,14 +132,14 @@ As we can see in [this](#imbalanced-data-original) figure, there is a huge imbal
 
 Random undersampling involves randomly selecting examples from the majority class and deleting them from the training dataset.
 
-### Distributing Equally
+### Distributing Equally 〰
 
 - We first notice that there are 492 Fraudulent transactions and we need to bring the Non-Fradulent transaction to the same amount to make the 50-50 ratio we need.
 - Now we would shuffle the data to make sure that the data is equally distributed and not skewed towards one side due to the sub-sample we choose.
 
 *Note: Due to reducing the number of Non-fradulent transactions from 284,315 to 492*
 
-## Correlating
+## Correlating ➰
 
 Correlating consists of analysing the relationship between at least two variables, e.g. two fields of a database or of a log or raw data. The result will display the strength and direction of the relationship.
 
@@ -147,9 +149,15 @@ Looking at the [Correlation Matrix](#correlation-original-dataset) we can make f
 
  * **Negative Correlations:** V17, V14, V12 and V10 are negatively correlated. That is the lower these values are, the more likely it is the transaction would be a fraud.
  * **Positive Correlations:** V2, V4, V11, and V19 are positvely correlated. That is the higher these values are, the more likely it is the transaction would be a fraud.
- * **Boxplots:** I will be using boxplots to have a better understanding of these features in fraud and non-fraud transactions.
+ * **Boxplots:** We will be using boxplots to have a better understanding of these features in fraud and non-fraud transactions.
 
 [Here](#correlation-new-sampled-dataset) we can see how Sub-sampling and equating the dataset has helped us magnify the existing correlation and generate new ones. Which would help us get higher accuracy in training.
+
+### Boxplots 🔳
+
+Looking at [these plots](#boxplots-🔳) helps us understand on which vaules of these features the classes are positive or negative which helps us make a prediction. But we cannot help but notice how each of these values are having a lot of outliers which are sometimes extreme. These extreme outliers can confuse our model to make a classification.
+
+## Anamoly Detection 👻
 
 ## Charts and Figures 📈
 
