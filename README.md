@@ -3,32 +3,37 @@ Many banks use Machine Learning to predict fraud in credit card transactions, bu
 
 # Table of Contents 📒 <!-- omit in toc -->
 
-- [Synopsis 📝](#synopsis-)
-- [What is Fraud Detection ⁉](#what-is-fraud-detection-)
-- [Fraud detection techniques ✅](#fraud-detection-techniques-)
-- [Challenges faced during fraud detection 💫](#challenges-faced-during-fraud-detection-)
-- [Dataset 💾](#dataset-)
-  - [Summary of the Dataset 📃](#summary-of-the-dataset-)
-  - [Common mistakes while using Imbalanced Dataset 🚫](#common-mistakes-while-using-imbalanced-dataset-)
-  - [Scaling the Dataset 🔬](#scaling-the-dataset-)
-    - [Why and Where to Apply Feature Scaling❔](#why-and-where-to-apply-feature-scaling)
-  - [Sub-Sampling the DataSet ➗](#sub-sampling-the-dataset-)
-    - [Why do we need to create a Sub-Sample❔](#why-do-we-need-to-create-a-sub-sample)
-      - [Down-Sampling 📉](#down-sampling-)
-    - [Splitting the Dataset ➖](#splitting-the-dataset-)
-  - [Charts and Figures 📈](#charts-and-figures-)
-    - [Distribution Plot of Amount and Time 💲⏳](#distribution-plot-of-amount-and-time-)
-    - [Distribution Plot of each feature 🧮](#distribution-plot-of-each-feature-)
-    - [Balancing of the DataSet 📊](#balancing-of-the-dataset-)
+- [Synopsis 📝](#synopsis-📝)
+- [What is Fraud Detection ⁉](#what-is-fraud-detection-⁉)
+- [Fraud detection techniques ✅](#fraud-detection-techniques-✅)
+- [Challenges faced during fraud detection 💫](#challenges-faced-during-fraud-detection-💫)
+- [Dataset 💾](#dataset-💾)
+  - [Summary of the Dataset 📃](#summary-of-the-dataset-📃)
+  - [Common mistakes while using Imbalanced Dataset 🚫](#common-mistakes-while-using-imbalanced-dataset-🚫)
+  - [Scaling the Dataset 🔬](#scaling-the-dataset-🔬)
+    - [Why and Where to Apply Feature Scaling❔](#why-and-where-to-apply-feature-scaling❔)
+  - [Sub-Sampling the DataSet ➗](#sub-sampling-the-dataset-➗)
+    - [Why do we need to create a Sub-Sample❔](#why-do-we-need-to-create-a-sub-sample❔)
+      - [Down-Sampling 📉](#down-sampling-📉)
+    - [Splitting the Dataset ➖](#splitting-the-dataset-➖)
+  - [Random Under-Sampling the DataSet ✂](#random-under-sampling-the-dataset-✂)
+    - [Distributing Equally](#distributing-equally)
+  - [Correlating](#correlating)
+  - [Charts and Figures 📈](#charts-and-figures-📈)
+    - [Distribution Plot of Amount and Time 💲⏳](#distribution-plot-of-amount-and-time-💲⏳)
+    - [Distribution Plot of each feature 🧮](#distribution-plot-of-each-feature-🧮)
+    - [Balancing of the DataSet 📊](#balancing-of-the-dataset-📊)
+    - [Balancing of the DataSet 📊](#balancing-of-the-dataset-📊)
       - [Imbalanced Data (Original)](#imbalanced-data-original)
       - [Balanced Data (After Sub-Sampling)](#balanced-data-after-sub-sampling)
-    - [Correlation Matrices 🟦⬜🟥](#correlation-matrices-)
+    - [Correlation Matrices 🟦⬜🟥](#correlation-matrices-🟦⬜🟥)
       - [Correlation (Original Dataset)](#correlation-original-dataset)
       - [Correlation (New Sampled DataSet)](#correlation-new-sampled-dataset)
-    - [BoxPlots 🔳](#boxplots-)
+    - [BoxPlots 🔳](#boxplots-🔳)
       - [Negative Correlation](#negative-correlation)
       - [Positive Correlation](#positive-correlation)
-- [References 🔍](#references-)
+    - [Distribution plot of V14, V12, V10 (Fraud Transactions) 🗻](#distribution-plot-of-v14-v12-v10-fraud-transactions-🗻)
+- [References 🔍](#references-🔍)
 
 # Synopsis 📝
 
@@ -78,8 +83,9 @@ It contains only numerical input variables which are the result of a PCA transfo
 
  - Transaction amounts are relatively small, averaging at **USD 88.349619**.
  - No `Null` values.
- - **99.83%** of transactions were **non-fraud** and **0.17%** of transactions were fraud, making the data Imbalanced.
+ - **99.83%** of transactions were **non-fraud** and **0.17%** of transactions were fraud, making the data [Imbalanced](#imbalanced-data-original).
  - The description of the data says all the features, except time and amount went through **PCA Transformation** (Dimensionality Reduction technique). Keeping in mind that in order to implement PCA Transformation, features are needed to be scaled so I will be assuming all the ***V*** features have been scaled.
+ - The data is [highly skewed](#distribution-plot-of-amount-and-time-💲⏳) between the features which can impact our results heavily.
 
 ## Common mistakes while using Imbalanced Dataset 🚫
 
@@ -124,12 +130,26 @@ As we can see in [this](#imbalanced-data-original) figure, there is a huge imbal
 
 Random undersampling involves randomly selecting examples from the majority class and deleting them from the training dataset.
 
-To achieve this, 
+### Distributing Equally
 
 - We first notice that there are 492 Fraudulent transactions and we need to bring the Non-Fradulent transaction to the same amount to make the 50-50 ratio we need.
 - Now we would shuffle the data to make sure that the data is equally distributed and not skewed towards one side due to the sub-sample we choose.
 
 *Note: Due to reducing the number of Non-fradulent transactions from 284,315 to 492*
+
+## Correlating
+
+Correlating consists of analysing the relationship between at least two variables, e.g. two fields of a database or of a log or raw data. The result will display the strength and direction of the relationship.
+
+![Correlation Implied Causation](https://imgs.xkcd.com/comics/correlation.png)
+
+Looking at the [Correlation Matrix](#correlation-original-dataset) we can make following observations:
+
+ * **Negative Correlations:** V17, V14, V12 and V10 are negatively correlated. That is the lower these values are, the more likely it is the transaction would be a fraud.
+ * **Positive Correlations:** V2, V4, V11, and V19 are positvely correlated. That is the higher these values are, the more likely it is the transaction would be a fraud.
+ * **Boxplots:** I will be using boxplots to have a better understanding of these features in fraud and non-fraud transactions.
+
+[Here](#correlation-new-sampled-dataset) we can see how Sub-sampling and equating the dataset has helped us magnify the existing correlation and generate new ones. Which would help us get higher accuracy in training.
 
 ## Charts and Figures 📈
 
@@ -202,3 +222,4 @@ A boxplot is a standardized way of displaying the distribution of data based on 
 11. [Understanding Boxplots](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
 12. [How to Remove Outliers for Machine Learning](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
 13. [Random Oversampling and Undersampling for Imbalanced Classification](https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/#:~:text=Random%20undersampling%20involves%20randomly%20selecting,more%20balanced%20distribution%20is%20reached.)
+14. [What is a correlation? And data analysis tools](https://www.incibe-cert.es/en/blog/correlation-and-data-analysis-tools#:~:text=It%20consists%20of%20analysing%20the,%E2%80%9Ccorrelation%20coefficients%E2%80%9D%20are%20used.)
